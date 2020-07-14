@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+		<link rel="stylesheet" href="css/bootstrap.css"/>
+		<title>皮卡皮卡皮卡丘</title>
+		<embed src="pikaq.mp3" hidden="true" autostart="true" loop="true">
+		<script src="http://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			var a_idx = 0;    
+			jQuery(document).ready(function($) {       
+				$("body").click(function(e) {      
+					var a = new Array("皮卡", "皮卡", "皮", "卡", "丘", "皮卡丘", "皮卡" ,"皮卡", "皮卡丘", "皮", "卡", "丘");       
+					var $i = $("<span/>").text(a[a_idx]);       
+					a_idx = (a_idx + 1) % a.length;       
+					var x = e.pageX,      
+					y = e.pageY;       
+					$i.css({       
+						"z-index": 999999999999999999999999999999999999999999999999999999999999999999999,       
+						"top": y - 20,       
+						"left": x,      
+						"position": "absolute",      
+						"font-weight": "bold",     
+						"color": "#ff6651"      
+					});
+					
+					$("body").append($i);       
+					$i.animate({       
+						"top": y - 180,       
+						"opacity": 0       
+					},1500,function() {    
+						$i.remove();      
+					});      
+				});        
+			});
+		</script>
+		<style type="text/css">
+			body{
+				background-image: url(img/background.jpg);
+				background-repeat: no-repeat;
+				margin: 0px;
+				padding: 0px;
+				background-size: cover;
+			}
+			.img-op-8{
+				opacity:0.8;
+				filter:alpha(opacity=80); /* ie5678 */
+			}
+			.img-op-4{
+				opacity:0.4;
+				filter:alpha(opacity=40); /* ie5678 */
+			}
+			/*
+			audio{
+				display: none;
+			}*/
+			#menu-nav{
+				background-color:rgba(255,255,255,0.5) ;
+			}
+			#logo {
+			    font-weight: 600;
+			    font-size: 28px;
+			    font-family: "黑体";
+			    color: #8c888b;
+			    background: -webkit-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+			    -moz-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+			    -ms-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+			    color: transparent;
+			    /*设置字体颜色透明*/
+			    -webkit-background-clip: text;
+			    /*背景裁剪为文本形式*/
+			    animation: ran 10s linear infinite;
+			    /*动态10s展示*/
+			}
+					
+			@keyframes ran {
+			    from {
+			        backgroud-position: 0 0;
+			    }
+			    to {
+			        background-position: 2000px 0;
+			    }
+			}
+		</style>
+	</head>
+	<body>
+		<!--顶部导航-->
+		<div class="container">
+			<nav class="navbar navbar-inverse navbar-fixed-top" rol="navigation" id="menu-nav">	   
+		       <div class="navbar-header"> 
+		          <a class="navbar-brand" href="index.html" id="logo">欢迎来到皮卡丘的小基地</a>
+		       </div>
+			</nav>
+		</div>
+		<div class="container"><p></p></div>
+		<!--广告大屏幕-->
+		<div class="container">
+			<div class="jumbotron jumbotron-fluid" >
+				<!--徽章-->
+				<h1 class="display-3 text-center">皮卡丘的世界<span class="badge badge-secondary"><img src="img/pika-head.jpg" class="img-fluid img-op-8 shadow p-3 mb-5 bg-white rounded" alt="Responsive image"></span></h1>
+				<p class="lead">皮卡丘，是日本任天堂公司发行的掌机游戏系列《宝可梦》（中国大陆常称“口袋妖怪”）中登场精灵的一种，首次出现于第一世代游戏《宝可梦：红/绿》。</p>
+				<hr class="my-4">
+				<p class="text-center">脸颊两边有着小小的电力袋。遇到危险时就会放电。会将尾巴竖起来，去感觉周围是否安全。</p>
+				<p class="lead text-center">
+					<a class="btn btn-primary btn-lg " href="dir.html" role="button" data-toggle="bottom" data-placement="top" title="皮卡皮卡">想知道更多咩，点我点我</a>
+				</p>
+			</div>
+		</div>
+		<!--轮播图-->
+		<div class="container">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+				<div class="carousel-item active">
+				  <img src="img/pika.gif" class="d-block w-100 img-op-4" alt="...">
+				</div>
+				<div class="carousel-item ">
+				  <img src="img/pika2.gif" class="d-block w-100 img-op-4" alt="...">
+				</div>
+				<div class="carousel-item">
+				  <img src="img/pika1.gif" class="d-block w-100 img-op-4" alt="...">
+				</div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
+		<!--背景音乐 由于谷歌火狐停止使用插件，此处背景音乐仅能在ie中使用，edge也不行！！！ audio autopaly 和 video autoplay 在桌面版浏览器半数失效-->
+		<audio src="pikaq.mp3" autoplay="true" playcount="-1" loop="true"></audio>
+		
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

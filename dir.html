@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+		<link rel="stylesheet" href="css/bootstrap.css"/>
+		<title>皮卡皮卡皮卡丘</title>
+		<embed src="baokem.mp3" hidden="true" autostart="true" loop="true">
+		<script src="http://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			var a_idx = 0;    
+			jQuery(document).ready(function($) {       
+				$("body").click(function(e) {      
+					var a = new Array("皮卡", "皮卡", "皮", "卡", "丘", "皮卡丘", "皮卡" ,"皮卡", "皮卡丘", "皮", "卡", "丘");       
+					var $i = $("<span/>").text(a[a_idx]);       
+					a_idx = (a_idx + 1) % a.length;       
+					var x = e.pageX,      
+					y = e.pageY;       
+					$i.css({       
+						"z-index": 999999999999999999999999999999999999999999999999999999999999999999999,       
+						"top": y - 20,       
+						"left": x,      
+						"position": "absolute",      
+						"font-weight": "bold",     
+						"color": "#ff6651"      
+					});
+					$("body").append($i);       
+					$i.animate({       
+						"top": y - 180,       
+						"opacity": 0       
+					},1500,function() {    
+						$i.remove();      
+					});      
+				});        
+			});
+		</script>
+		<script type="text/javascript">
+			$(function(){
+			   $(".col-2 .btn1").on("click",function(){
+			         var address =$(this).attr("data-src");
+			      $("iframe").attr("src",address);
+			   });
+			});
+		</script>
+		<style type="text/css">
+			body{
+				background-image: url(img/background.jpg);
+				background-repeat: no-repeat;
+				margin: 0px;
+				padding: 0px;
+				background-size: cover;
+			}
+			#menu-nav{
+				background-color:rgba(255,255,255,0.5);
+			}
+			.back{
+				background-color:rgba(255,255,255,0.5);
+			}
+			.back a{
+				color: #000000;
+				text-decoration:none;
+			}
+			#logo {
+			    font-weight: 600;
+			    font-size: 28px;
+			    font-family: "黑体";
+			    color: #8c888b;
+			    background: -webkit-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+			    -moz-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+			    -ms-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+			    color: transparent;
+			    /*设置字体颜色透明*/
+			    -webkit-background-clip: text;
+			    /*背景裁剪为文本形式*/
+			    animation: ran 10s linear infinite;
+			    /*动态10s展示*/
+			}
+					
+			@keyframes ran {
+			    from {
+			        backgroud-position: 0 0;
+			    }
+			    to {
+			        background-position: 2000px 0;
+			    }
+			}
+		</style>
+	</head>
+	<body>
+		<!--顶部导航-->
+		<div class="container">
+			<nav class="navbar navbar-inverse navbar-fixed-top" rol="navigation" id="menu-nav">	   
+		       <div class="navbar-header"> 
+		          <a class="navbar-brand" href="index.html" id="logo">欢迎来到皮卡丘的小基地</a>
+		       </div>
+			</nav>
+		</div>
+		
+		<div class="container"><p></p></div>
+		<!--栅格布局-->
+		<div class="container">
+			<div class="row">
+				<div class="col-4">
+					<!--卡片-->
+					<div class="card">
+					  <img class="card-img-top" src="img/cardhead.jpg" alt="Card image cap">
+					  <div class="card-body">
+						<h5 class="card-title text-center">皮卡丘<br><br>ピカチュウ<br><br>Pikachu</h5>
+						<p class="card-text text-center">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><span class="border align-baseline rounded-pill">身高</span><span class="border-0 d-flex justify-content-around">0.4m</span></li>
+								<li class="list-group-item"><span class="border align-baseline rounded-pill">体重</span><span class="border-0 d-flex justify-content-around">6kg</span></li>
+								<li class="list-group-item"><span class="border align-baseline rounded-pill">属性</span><span class="border-0 d-flex justify-content-around">电</span></li>
+								<li class="list-group-item"><span class="border align-baseline rounded-pill">全国编号</span><span class="border-0 d-flex justify-content-around">025</span></li>
+								<li class="list-group-item"><span class="border align-baseline rounded-pill">分类</span><span class="border-0 d-flex justify-content-around">鼠口袋妖怪</span></li>
+								<li class="list-group-item"><span class="border align-baseline rounded-pill">特性</span><span class="border-0 d-flex justify-content-around">静电、避雷针</span></li>
+								<li class="list-group-item"><span class="border align-baseline rounded-pill">性别比例</span><span class="border-0 d-flex justify-content-around">50%♂，50%♀</span></li>
+							</ul>
+						</p>
+					  </div>
+					</div>
+				</div>
+				<div class="col-2 back">
+					<div class="container"><br><p></p></div>
+					<!--选择栏-->
+					<div class="btn-group btn-group-vertical back w-75">
+						<button type="button" class="btn btn1" data-src="life.html">角色生活</button>
+						<button type="button" class="btn btn1" data-src="trait.html">性格特点</button>
+						<div class="btn-group" role="group">
+							<button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								登场记录
+							</button>
+							<div class="dropdown-menu back" aria-labelledby="btnGroupDrop1">
+								<button class="btn1 btn" type="button" data-src="cartoon.html">动画</button>
+								<button class="btn1 btn" type="button" data-src="caricature.html">漫画</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 back">
+					<iframe frameborder="0" scrolling="yes" style="width:100%;height:100%" src="" id="di"></iframe>
+				</div>
+			</div>
+		</div>
+		<!--背景音乐 由于谷歌火狐停止使用插件，此处背景音乐仅能在ie中使用，edge也不行！！！ audio autopaly 和 video autoplay 在桌面版浏览器半数失效-->
+		<audio src="baokem.mp3" autoplay="true" playcount="-1" loop="true"></audio>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html>
